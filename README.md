@@ -1,7 +1,8 @@
-<p>multipleSelect2</p>
+multipleSelect2
 Is a free plugin to multselect itens in a form, it fakes a multselect.
-<code>
-jquery 2.0 or early
-multipleSelect3.css
-multipleSelect3.js
-</code>
+Check  examples and how to use it on here 
+
+https://marcosbrinner.github.io/multipleSelect2/
+
+
+You can find more documentation o this plugin page.
