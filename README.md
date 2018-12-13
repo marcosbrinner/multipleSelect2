@@ -6,3 +6,11 @@ https://marcosbrinner.github.io/multipleSelect2/
 
 
 You can find more documentation o this plugin page.
+
+<b>Usage</b>
+
+```
+<script>
+	$("#teste1").multipleSelect2();
+</scritp>
+```
