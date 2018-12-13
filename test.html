@@ -3,54 +3,39 @@
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
+<link href="multipleSelect3.css" type="text/css" rel="stylesheet" />
 <script src="multipleSelect3.js"></script>
-<div id="teste1" style='width:300px;'></div>
+<div id="teste1" style='width:300px;height:300px;'></div>
 <div id="teste2"></div>
-<style>
-.multipleSelect2{
-
-}
-.multipleSelect2-half{
-    float:left;
-    width:50%;
-    min-height: 50px;
-}
-.multipleSelect2-full{
-    float:left;
-    width:100%;
-}
-.multipleSelect2 ul{
-    padding: 0px;
-    overflow-x:hidden;
-    overflow-y:auto;
-}
-.multipleSelect2 ul li{
-    display: block;
-}
-</style>
 <script>
+     var a 
 $(document).ready(function(){
     var valores =[];
-    valores.push( {Nome:'aaaa', Foto:'https://www.apptuts.com.br/wp-content/uploads/2017/03/jogos-da-nintendo-capa-250x250.jpg', Email:'marcosbrinner@outlook.com'});
-    valores.push( {Nome:'bbbb', Foto:'https://www.secretcompassonline.com/temp/product_view//SIDESHOW_Batman_Sixth_1.jpg', Email:'marcosbrinner@outlook.com'});
+    valores.push( {Text:'Marcos brinner luzia paulino', Foto:'https://www.apptuts.com.br/wp-content/uploads/2017/03/jogos-da-nintendo-capa-250x250.jpg', Value:'marcosbrinner@outlook.com'});
+    valores.push( {Text:'Ana maria braga', Foto:'https://www.secretcompassonline.com/temp/product_view//SIDESHOW_Batman_Sixth_1.jpg', Value:'marcosbrinner@outlook.com'});
+    valores.push( {Text:'Alguns KKKK e tal', Foto:'https://www.secretcompassonline.com/temp/product_view//SIDESHOW_Batman_Sixth_1.jpg', Value:'marcosbrinner@outlook.com'});
+    valores.push( {Text:'So mais um para ver epah', Foto:'https://www.secretcompassonline.com/temp/product_view//SIDESHOW_Batman_Sixth_1.jpg', Value:'marcosbrinner@outlook.com'});
+    valores.push( {Text:'Aquele que não deu', Foto:'https://www.secretcompassonline.com/temp/product_view//SIDESHOW_Batman_Sixth_1.jpg', Value:'marcosbrinner@outlook.com'});
 
-    $("#teste1").multipleSelect2(
+        a = $("#teste1").multipleSelect2(
         {
             data:valores,
-            // template: function(data){
-                
-            //     var rt = "<div style='float:left;width:100%'>"
-            //         +"<div style='float:left;width:30%;border-radius:50%;overflow:hidden'>"
-            //             +"<img src='"+data.Foto+"' style='width:100%'>"   
-            //         +"</div>"
-            //         +"<div style='float:left;width:69%;margin-left:1%'>"
-            //             + data.Nome
-            //         +"</div>"
-            //     +"</div>";
-
-            //     return rt;
-            // }
+            selectionTemplate : function(data){
+                return data.Text +" "+ data.Value;
+            },
+            onSelect: function(element, source){
+                   
+            },
+            width:'full',
+            template: function(data){
+                return data.Value
+            }
         }
     );
+    
 });
+function teste(){
+        console.log(a.getItens());
+    }
 </script>
+<!-- <button onclick='teste()'></button> -->
