@@ -41,13 +41,16 @@ Personalizing the view template
  	data: myDataArray,
 	template: function(data){
 		var html ="";
-		html += "<div style='float:left'>";
-		html +=	data.Name +" "+ data.Id;
-		html += "</div>";
-		return html;
+		        html += "<div style='float:left'>";
+                	html +=	"<div><img src='"+data.Photo+"' ></div>";
+                	html += "<div>"+data.Name+"</div>";
+		        html += "</div>";
+		        return html;
 	}
  });
 ```
+![](https://imageshack.com/a/img921/2593/MXwPZR.png)
+
 Personalizing the return  template
 ```javascript
  var mySelect = $("#teste1").multipleSelect2({
