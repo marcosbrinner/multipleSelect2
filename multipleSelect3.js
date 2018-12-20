@@ -9,6 +9,8 @@
             selectionTemplate : null,
             onSelect : null,
             onDeselect : null,
+            avaliableText : 'Avalibable',
+            selectedText : 'Selected',
         }, options);
         var fistElement = null;
         var secondElement = null;
@@ -17,7 +19,7 @@
             element.html(""
                 +"<div class='multipleSelect2-"+settings.width+"'>"
                     +"<div class='label avalibleLable'>"
-                        +"<span>Avalibable</span>"
+                        +"<span>"+settings.avaliableText+"</span>"
                         +"<button></button>"
                     +"</div>"
                     +"<div class='thisInner'>"
@@ -26,7 +28,7 @@
                 +"</div>"
                 +"<div class='multipleSelect2-right multipleSelect2-"+settings.width+"'>"
                      +"<div class='label selectedLable'>"
-                        +"<span>Selected</span>"
+                        +"<span>"+settings.selectedText+"</span>"
                         +"<button></button>"
                     +"</div>"
                     +"<div class='thisInner'>"
@@ -70,6 +72,30 @@
             return _data;
         };
 
+        var selectAll = function(){
+            var elements =  fistElement.find("[data-inc]");
+            $.each(elements,function(k,v){
+                var _this = $(elements[k]);
+                var _value = settings.data[_this.data('inc')];
+                if(settings.onSelect != null){
+                    settings.onSelect(_this,_value);
+                }
+                secondElement.prepend(_this.bind("click",deselectOne));
+            });
+        }
+
+        var deselectAll = function(){
+            var elements =  secondElement.find("[data-inc]");
+            $.each(elements,function(k,v){
+                var _this = $(elements[k]);
+                var _value = settings.data[_this.data('inc')];
+                if(settings.onSelect != null){
+                    settings.onSelect(_this,_value);
+                }
+                fistElement.prepend(_this.bind("click",selectOne));
+            });
+        }
+
         var getSelectionByTemplate =  function (){
             var temp = getSelectedItens();
             var _data = [];
@@ -94,6 +120,8 @@
                 });
             }
             fistElement.find('li[data-inc]').bind("click",selectOne);
+            element.find('.avalibleLable button').bind("click",selectAll);
+            element.find('.selectedLable button').bind("click",deselectAll);
         };
         Start();
 
