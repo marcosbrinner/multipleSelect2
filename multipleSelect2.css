@@ -58,7 +58,14 @@
 .multipleSelect2 .multipleSelect2-half .selectedLable {
     border-left: 1px solid #ccc;
 }
-
+.multipleSelect2 .multipleSelect2-half .selectedLable span{
+    color: black;
+    font-size:14px;
+}
+.multipleSelect2 .multipleSelect2-full .selectedLable span {
+    color: black;
+    font-size: 14px;
+}
 .multipleSelect2 .multipleSelect2-full .selectedLable {
     border-top: 1px solid #ccc;
 }
@@ -81,7 +88,16 @@
     float: right;
     margin-right: 5px;
 }
+.multipleSelect2 .multipleSelect2-half .avalibleLable span {
+    color: black;
+    font-size: 14px;
+    float:left;
+}
 
+.multipleSelect2 .multipleSelect2-full .avalibleLable span {
+    color: black;
+    font-size: 14px;
+}
 .multipleSelect2 .multipleSelect2-half .avalibleLable button::after {
     content: '»'
 }
@@ -117,7 +133,7 @@
     display: block;
     float: left;
     width: 100%;
-    padding: 5px !important;
+    padding: 5px;
     background-color: #f7f7f7;
     border-bottom: 1px solid #ece9e9;
     white-space: nowrap;
