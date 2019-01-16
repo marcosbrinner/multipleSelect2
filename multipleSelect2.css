@@ -1,0 +1,132 @@
+.multipleSelect2 {
+    border: 1px solid #ccc;
+    float: left;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.multipleSelect2-half {
+    float: left;
+    width: 50%;
+    min-height: 50px;
+    display: flex;
+    flex-flow: column;
+    height: calc(100% - 1px);
+}
+
+.multipleSelect2-full {
+    float: left;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-flow: column;
+}
+
+.multipleSelect2 ul {
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.multipleSelect2 .multipleSelect2-half + .multipleSelect2-right {
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.multipleSelect2 .label {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    padding-top: 3px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    height: 25px;
+}
+
+.multipleSelect2 .thisInner {
+    flex-grow: 1;
+    float: left;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.multipleSelect2 .multipleSelect2-half .selectedLable {
+    border-left: 1px solid #ccc;
+}
+
+.multipleSelect2 .multipleSelect2-full .selectedLable {
+    border-top: 1px solid #ccc;
+}
+
+.multipleSelect2 .avalibleLable button, .multipleSelect2 .selectedLable button {
+    border: 0px;
+    background: #007bff;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.multipleSelect2 .multipleSelect2-half .avalibleLable button {
+    float: right;
+    margin-right: 5px;
+}
+
+.multipleSelect2 .multipleSelect2-full .avalibleLable button {
+    float: right;
+    margin-right: 5px;
+}
+
+.multipleSelect2 .multipleSelect2-half .avalibleLable button::after {
+    content: '»'
+}
+
+.multipleSelect2 .multipleSelect2-full .avalibleLable button::after {
+    content: '↓'
+}
+
+.multipleSelect2 .multipleSelect2-half .selectedLable span {
+    float: right;
+    margin-right: 10px;
+}
+
+.multipleSelect2 .multipleSelect2-half .selectedLable button {
+    float: left;
+    margin-left: 0px;
+}
+
+.multipleSelect2 .multipleSelect2-full .selectedLable button {
+    float: right;
+    margin-right: 5px;
+}
+
+.multipleSelect2 .multipleSelect2-half .selectedLable button::after {
+    content: "«";
+}
+
+.multipleSelect2 .multipleSelect2-full .selectedLable button::after {
+    content: '↑'
+}
+
+.multipleSelect2 ul li {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 5px !important;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ece9e9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+    .multipleSelect2 ul li:hover {
+        background-color: #d5e4e8;
+        content: '>'
+    }
