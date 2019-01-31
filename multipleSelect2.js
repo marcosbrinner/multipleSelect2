@@ -4,7 +4,7 @@
             data: null,
             value: null,
             width: "half",
-            resort: false,
+            resort: true,
             template: null,
             selectionTemplate: null,
             onSelect: null,
@@ -62,7 +62,7 @@
             var temp = secondElement.find("li[data-inc]");
             var _data = [];
             $.each(temp, function (k, v) {
-                var _this = $(temp).data('inc');
+                var _this = $(temp[k]).data('inc');
                 _data.push(settings.data[_this]);
             });
             return _data;
@@ -148,7 +148,7 @@
             },
 
             anyItem: function () {
-                if(getSelectedItens().length > 0) {
+                if (getSelectedItens().length > 0) {
                     return true;
                 } else {
                     return false;
@@ -156,7 +156,7 @@
             },
 
             disable: function (value) {
-                settings.disabled = value; 
+                settings.disabled = value;
             }
         };
 
